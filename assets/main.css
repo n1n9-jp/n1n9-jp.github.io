@@ -65,7 +65,9 @@ text {
 */
 
 .breadcrumb rect {
-  cursor: pointer;
+  cursor: zoom-out;
+  cursor: -moz-zoom-out;
+  cursor: -webkit-zoom-out;
 }
 
 .children rect.parent {

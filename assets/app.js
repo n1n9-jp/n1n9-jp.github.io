@@ -247,12 +247,11 @@ var Graph = function() {
           */
           g.append("rect")
               .attr("class", "parent")
-              .call(rect)
-            .append("title")
-              .text(function(d) {
-                //console.log(d);
-                return formatNumber(d.value);
-              });
+              .call(rect);
+            // .append("title")
+            //   .text(function(d) {
+            //     return formatNumber(d.value);
+            //   });
 
           g.append("text")
               .attr("dy", ".75em")
