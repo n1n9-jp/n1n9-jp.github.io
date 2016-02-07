@@ -1,0 +1,149 @@
+body {
+  background-color: #FFF;
+  margin: 0;
+}
+
+#wrapper {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #FFF;
+}
+
+#headerBlock {
+  float: left;
+  width: 100%;
+  height: 80px;
+  margin: 0 auto;
+  background-color: #FFF;
+}
+h1 {
+  font-size: 18px;
+/*  margin-left: 20px;*/
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+#headerBlock p {
+  font-size: 9px;
+  color: #999;
+/*  margin-left: 20px;*/
+  margin-top: 4px;
+}
+
+#chartArea {
+  background-color: #FFF;
+  width: 100%;
+}
+
+
+
+/*
+d3.js
+*/
+
+text {
+  pointer-events: none;
+}
+
+
+
+
+/* breadcrumb */
+
+.breadcrumb text {
+  font-weight: bold;
+  font-size: 8px;
+}
+
+/*.breadcrumb rect {
+  fill: #DDD;
+}
+
+.breadcrumb:hover rect {
+  fill: #FFF;
+}
+*/
+
+.breadcrumb rect {
+  cursor: pointer;
+}
+
+.children rect.parent {
+  fill: #FFFFFF;
+  fill-opacity: 0.0;
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
+  cursor: zoom-in;
+}
+
+
+/* 大きい四角 */
+/*rect.parent {
+  stroke-width: 1px;
+  stroke: #FFF;
+}*/
+
+
+
+/* clickable rect */
+.child {
+  fill: #66c2ff;
+}
+
+/* clickable rect: hover; */
+.children:hover rect.child {
+  fill: #99d6ff;
+}
+
+
+
+
+
+
+/* 矩形：大カテゴリ */
+rect {
+  stroke-width: 1px;
+  stroke: #99d6ff;
+  fill: #CCC;
+}
+rect.parent {
+  fill: #CCC;
+  fill-opacity: .1;
+  stroke: #FFF;
+  stroke-width: 1px;
+  cursor: zoom-out;
+  cursor: -moz-zoom-out;
+  cursor: -webkit-zoom-out;
+}
+rect.child {
+  stroke: #99d6ff;
+  stroke-width: 1px;
+}
+
+#footer {
+  font-size: 10px;
+  fill: #999;
+}
+
+#dataSource {
+  float: left;
+
+  padding: 4px 4px 4px 0;
+}
+
+#dataSource .fa{
+  padding: 0 4px 0 0;
+}
+
+#dataSource a .fa{
+  color: #6666FF;
+}
+
+#dataSource a .fa:hover{
+  color: #333333;
+}
+
+
+
+
+
