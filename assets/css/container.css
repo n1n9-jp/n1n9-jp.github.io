@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+body {
+    /* font-family: 'Noto Serif JP', serif; */
+    font-family: 'Noto Sans JP', sans;
+    font-feature-settings: "palt";
+}
+
+#mapContainer {
+    height: 100vh; 
+    width: 100vw; 
+}

@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+/* 大きな画面（例：1280px以上）の場合 */
+@media (min-width: 1280px) {
+    .maplibregl-ctrl-top-right {
+      top: 0;
+      /* 中央寄せされたコンテナの右端：右側余白 = (画面幅 - コンテナ幅)/2 + 右のパディング */
+      right: calc((100% - 1280px) / 2 + 1rem);
+    }
+}
+
+/* 中くらいの画面（1024px～1279px）の場合 */
+@media (min-width: 1024px) and (max-width: 1279px) {
+.maplibregl-ctrl-top-right {
+    top: 0;
+    right: calc((100% - 1024px) / 2 + 1rem);
+}
+}
+
+/* 小さい画面（1023px以下）の場合はシンプルに固定の余白を設定 */
+@media (max-width: 1023px) {
+.maplibregl-ctrl-top-right {
+    top: 0;
+    right: 1rem;
+}
+}
+  
+
+.maplibregl-ctrl-bottom-right {
+    display: none;
+}
+
+
+.maplibregl-ctrl-top-right {
+    position: relative;
+    pointer-events: none;
+}
+
+
+.maplibregl-popup {
+    max-width: 400px;
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
