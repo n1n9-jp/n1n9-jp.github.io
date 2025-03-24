@@ -27,8 +27,8 @@ var POI = [
     city: "Tokyo Station",
     longitude: 139.767125,
     latitude: 35.681236,
-    zoom: minZoomLevel,
-    pitch: 45,
+    zoom: 3,
+    pitch: 60,
     bearing: 0,
   }
 ];
