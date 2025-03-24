@@ -17,7 +17,7 @@ var minZoomLevel = 2;
 var maxZoomLevel = 5;
 
 /* Map Tile */
-// var mapDomain = "https://127.0.0.1:5500";
+// var mapDomain = "http://127.0.0.1:5500";
 // var mapPath = "/tileset/{z}/{x}/{y}.pbf";
 var mapDomain = "https://n1n9-jp.github.io";
 var mapPath = "/jcie/{z}/{x}/{y}.pbf";
@@ -215,10 +215,11 @@ var initBaseMap = function() {
         }
     });
 
-    // タイルソースのロード完了を待つ
+    // 初期ロード時のみ実行されるように変更
+    let initialLoadComplete = false;
     mapObject.on('sourcedata', function(e) {
-        if (e.sourceId === 'vector-tiles' && e.isSourceLoaded) {
-            // タイルのロードが完了したら次の処理を実行
+        if (!initialLoadComplete && e.sourceId === 'vector-tiles' && e.isSourceLoaded) {
+            initialLoadComplete = true;
             PubSub.publish('load:filelist');
         }
     });
@@ -340,7 +341,7 @@ var initVizSlider = function() {
         prevEl: '#swiper-button-prev-pref',
       },
       on: {
-        slideChange: function(e) {
+        slideChange: debounce(function(e) {
             countryIndex = e.activeIndex;
             console.log("countryArray[countryIndex]", countryArray[countryIndex]);
 
@@ -350,16 +351,19 @@ var initVizSlider = function() {
             mapObject.flyTo({
                 center: [_lon, _lat],
                 speed: 0.4,
-                curve: 2
+                curve: 2,
+                essential: true
             });
-            console.log("flyTo");
 
-            // 飛行移動完了時にjoinDataを直接実行
-            mapObject.once('moveend', function() {
+            // moveendイベントのリスナーを一度だけ設定
+            const onMoveEnd = function() {
                 fl_map = "drawMap";
                 PubSub.publish('join:data');
-            });
-        }
+                mapObject.off('moveend', onMoveEnd);
+            };
+            
+            mapObject.on('moveend', onMoveEnd);
+        }, 300)
       }
     });
 
@@ -477,7 +481,7 @@ var joinData = function() {
       }
     })
     .then(() => {
-        PubSub.publish('change:color');
+        PubSub.publish('draw:map');
     }).catch(error => {
         console.error("joinData でエラーが発生しました", error);
     });
