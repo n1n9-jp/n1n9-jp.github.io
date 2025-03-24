@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html class="h-full bg-gray-100">
+<head>
+<title></title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link href="assets/css/lib/swiper-bundle.css" rel="stylesheet" />
+<link href="assets/css/lib/swiper_overwrite.css" rel="stylesheet" />
+<link href="assets/css/lib/maplibre-gl.css" rel="stylesheet">
+<link href="assets/css/lib/maplibre_overwrite.css" rel="stylesheet" />
+<link href="assets/css/font.css" rel="stylesheet" />
+<link href="assets/css/container.css" rel="stylesheet" />
+
+</head>
+  <body class="h-full">
+    <div class="min-h-full">
+
+    <div id="globalnav" class="relative z-50">
+      <div class="bg-gray-800 pointer-events-none w-full h-16"></div>
+      
+      <div class="absolute inset-0 pointer-events-auto">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          
+          <div class="flex items-center">
+            <h1 class="shrink-0 text-white font-bold">
+              Title
+            </h1>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    
+
+      <main class="pb-16">
+          <div class="mx-auto">
+            <div id="mapContainer" class="z-0"></div>
+          </div>
+      </main>
+
+
+
+      <div class="bg-gray-800 fixed bottom-12 w-full z-30">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2">
+          <div class="bg-gray-500 p-4">
+            <div class="grid grid-cols-12 items-center h-20">
+              <div class="">
+                <div class="swiper-button-prev swipers" id="swiper-button-prev-pref"></div>
+              </div>
+              <div class="col-span-10 h-full">
+                <div class="swiper-container swipers h-full" id="swiper-container-pref">
+                  <div class="swiper-wrapper h-full" id="swiperPref">
+                  </div>
+                </div>
+              </div>
+              <div class="">
+                <div class="swiper-button-next swipers" id="swiper-button-next-pref"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="bg-gray-800 text-white py-4 fixed bottom-0 w-full z-30">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p class="text-left text-sm">JCIE. All rights reserved.</p>
+        </div>
+      </footer>
+
+    </div>
+
+<!-- common -->
+<script src="assets/js/lib/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="assets/js/lib/lodash.js"></script>
+<script src="assets/js/lib/swiper-bundle.min.js"></script>
+<script src="assets/js/lib/pubsub.js"></script>
+<script src="assets/js/lib/tailwind3-4-16.js"></script>
+<!-- /common -->
+
+<!-- dataviz -->
+<script src='assets/js/lib/d3.min.js'></script>
+<script src="assets/js/lib/maplibre-gl.js"></script>
+<script src='assets/js/lib/turf.min.js'></script>
+<!-- /dataviz -->
+
+<!-- original -->
+<script src="assets/js/main.js"></script>
+<!-- /original -->
+
+</body>
+</html>
