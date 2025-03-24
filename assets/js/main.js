@@ -18,7 +18,6 @@ var maxZoomLevel = 5;
 
 /* Map Tile */
 // var mapDomain = "http://127.0.0.1:5500";
-// var mapPath = "/tileset/{z}/{x}/{y}.pbf";
 var mapDomain = "https://n1n9-jp.github.io";
 var mapPath = "/jcie/{z}/{x}/{y}.pbf";
 var maptileURL = mapDomain + mapPath;
