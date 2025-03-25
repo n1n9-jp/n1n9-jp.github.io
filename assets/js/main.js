@@ -89,8 +89,8 @@ depthDataScaleArray.push(_depthobj2);
 -------------------- */
 
 /* Color */
-var minColor = "#000000";
-var maxColor = "#FFFFFF";
+var minColor = "#FFFFFF";
+var maxColor = "#000000";
 var nullColor = "#c3c7c9";
 
 /* Height */
